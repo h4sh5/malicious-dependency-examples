@@ -1,0 +1,5 @@
+on: push
+
+steps:
+  - uses: actions/checkout@v3
+  - uses: h4sh5/npm-mal-feed-check@latest
