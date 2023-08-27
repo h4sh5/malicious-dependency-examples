@@ -4,6 +4,10 @@ on:
   push:
 
   workflow_dispatch:
+    inputs:
+      git-ref:
+        description: Git Ref (Optional)    
+        required: false
 
 jobs:
   mal_check:
@@ -11,3 +15,5 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: h4sh5/npm-mal-feed-check@main
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
